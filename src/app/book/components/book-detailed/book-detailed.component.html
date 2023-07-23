@@ -1,0 +1,19 @@
+<div>
+  <h1>Book Details</h1>
+  <div *ngIf="!book">
+    <p>Book not found.</p>
+  </div>
+  <div *ngIf="book">
+    <p><strong>ID:</strong> {{ book.id }}</p>
+    <p><strong>Title:</strong> {{ book.bookDetails.title }}</p>
+    <p><strong>Author:</strong> {{ book.author.name }}</p>
+<!--    <p><strong>Genres:</strong> {{ getGenresString(book.genres) }}</p>-->
+    <p><strong>Reviews:</strong></p>
+    <ul>
+      <li *ngFor="let review of book.reviews">{{ review.text }}</li>
+    </ul>
+    <a [routerLink]="['updateBook/', id]" class="btn btn-warning">Edit</a>
+    <a (click)="deleteBook()" class="btn btn-danger">Delete</a>
+  </div>
+
+</div>

@@ -1,0 +1,28 @@
+<div class="container mt-5">
+  <!-- Форма регистрации -->
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h2 class="mb-3">Registration</h2>
+      <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" name="username" formControlName="userName" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" name="email" formControlName="email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" name="password" formControlName="password" required>
+        </div>
+        <div class="form-group">
+          <label for="confirmedPassword">Confirm password</label>
+          <input type="password" class="form-control" id="confirmedPassword" formControlName="confirmPassword" name="confirmedPassword" required>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+    </div>
+  </div>
+</div>

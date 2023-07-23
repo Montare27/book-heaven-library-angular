@@ -1,0 +1,54 @@
+<div class="container">
+  <h2>Create New Book</h2>
+  <form (ngSubmit)="onSubmit()" [formGroup]="bookForm">
+    <div class="form-group">
+      <label for="bookTitle">Title:</label>
+      <input type="text" id="bookTitle" name="title" class="form-control" formControlName="title" required>
+    </div>
+    <div class="form-group">
+      <label for="bookDescription">Description:</label>
+      <textarea id="bookDescription" name="description" class="form-control" formControlName="description" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="bookYear">Year of Book:</label>
+      <input type="number" id="bookYear" name="yearOfBook" class="form-control" formControlName="yearOfBook" required>
+    </div>
+    <div class="form-group">
+      <label for="bookImage">Image URL:</label>
+      <input type="file" id="bookImage" name="image" class="form-control" formControlName="imageData" required>
+    </div>
+    <div class="form-group">
+      <label for="bookFile">File URL:</label>
+      <input type="file" id="bookFile" name="file" class="form-control" formControlName="fileData" required>
+    </div>
+    <div class="form-group">
+      <label for="bookLength">Length:</label>
+      <input type="number" id="bookLength" name="length" class="form-control" formControlName="length" required>
+    </div>
+
+    <div class="form-group">
+      <label for="authorName">Author:</label>
+      <input
+        id="authorName"
+        type="text"
+        class="form-control"
+        placeholder="Start typing author name..."
+        #input
+        (input)="searchAuthors(input.value) "
+      />
+
+      <br>
+      <select class="form-control" #selected (change)="selectAuthor(parseInt(selected.value))">
+        <option *ngFor="let author of foundedAuthors" [value]="author.id" >{{author.name}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="genresId">Genres:</label>
+      <select class="form-control" id="genresId" formControlName="genresId" multiple>
+        <option *ngFor="let genre of genreSelectList" [value]="genre.id">{{ genre.name }}</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Create Book</button>
+  </form>
+</div>

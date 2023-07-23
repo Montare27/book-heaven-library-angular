@@ -1,0 +1,15 @@
+<div *ngIf="!books">
+  <h2>Any book was not found</h2>
+</div>
+
+<div *ngIf="books">
+  <div *ngFor="let book of books">
+    <div>
+      <img [src]="book.bookDetails.image" alt="">
+      <h4>{{book.bookDetails.title}}</h4>
+      <span>{{book.bookDetails.rating}}</span>
+      <span>{{book.genres[0].name}}</span>
+      <span>{{book.genres.length}} reviews</span>
+    </div>
+  </div>
+</div>
