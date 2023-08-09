@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ApiProviderService {
-  private url: string = "http://localhost:5249/api"
-  private authUrl: string = "http://localhost:5003/api"
+  private url: string = "http://localhost:5249/api";
+  private authUrl: string = "http://localhost:5003/api";
   constructor() { }
 
   getBookApiUrl() : string {

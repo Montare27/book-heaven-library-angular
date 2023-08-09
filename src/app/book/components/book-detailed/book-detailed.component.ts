@@ -11,14 +11,20 @@ import {ActivatedRoute} from "@angular/router";
 export class BookDetailedComponent {
   book: Book = null!;
   id: number = -1;
+
   constructor(private bookService: BookService, private route:ActivatedRoute ) {
     this.id = parseInt(route.snapshot.params['id'], 10);
     bookService.getBookById(this.id).subscribe( (book) => {
         this.book = book;
-      }, (error) => console.log(error)
-    );
+      });
+
+    console.log("id:" + this.id)
   }
   deleteBook() {
     this.bookService.deleteBook(this.id);
+  }
+
+  getGenreString() : string {
+    return this.book.genres.map(x=>x.name).join(', ');
   }
 }

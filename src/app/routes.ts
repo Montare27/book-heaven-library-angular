@@ -4,42 +4,45 @@ import {CreateBookComponent} from "./book/components/create-book/create-book.com
 import {BookDetailedComponent} from "./book/components/book-detailed/book-detailed.component";
 import {UpdateBookComponent} from "./book/components/update-book/update-book.component";
 import {LoginComponent} from "./authentication/components/login/login.component";
-import {RegisterComponent} from "./authentication/components/register/register.component";
 
-export const routes: Routes = [
+const routes: Routes = [
   {
     path : "",
-    redirectTo: 'book/list',
-    pathMatch: 'full'
-  },
-  {
-    path : "book/list",
     component: BookListComponent,
     title: "Book List"
   },
   {
+    path : "book/list",
+    component: BookListComponent,
+    title: "Book List",
+    pathMatch: "full"
+  },
+  {
+    path : "book/list/:word",
+    component: BookListComponent,
+    title: "Book List",
+    pathMatch: "full"
+  },
+  {
     path : "book/create",
     component: CreateBookComponent,
-    title: "Create Book"
+    title: "Create Book",
   },
   {
     path : "book/:id",
     component: BookDetailedComponent,
-    title: "Book Details"
+    title: "Book Details",
   },
   {
     path : "book/update/:id",
     component: UpdateBookComponent,
-    title: "Update Book"
+    title: "Update Book",
   },
   {
     path : "login",
     component: LoginComponent,
-    title: "Login"
-  },
-  {
-    path : "register",
-    component: RegisterComponent,
-    title: "Register"
+    title: "Login",
   },
 ];
+
+export default routes;

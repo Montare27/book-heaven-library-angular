@@ -7,6 +7,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BookDetailedComponent} from "./components/book-detailed/book-detailed.component";
 import {BookListComponent} from "./components/book-list/book-list.component";
 import {RouterModule} from "@angular/router";
+import routes from "../routes";
+import {BrowserModule} from "@angular/platform-browser";
+import {AppModule} from "../app.module";
 
 
 @NgModule({
@@ -21,15 +24,17 @@ import {RouterModule} from "@angular/router";
   ],
   imports: [
     CommonModule,
+    AppModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule,
+    BrowserModule,
+    RouterModule.forChild(routes),
   ],
   bootstrap:[
 
   ],
   exports: [
-
+    // RouterModule
   ],
 })
 export class BookModule { }

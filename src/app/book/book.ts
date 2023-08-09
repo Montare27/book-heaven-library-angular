@@ -1,9 +1,10 @@
 export interface Book {
   id: number;
   bookDetails: BookDetails;
-  author: AuthorDto;
-  genres: GenreDto[],
+  author: Author;
+  genres: Genre[],
   reviews: Review[],
+  publisherId: string;
 }
 
 export interface BookDetails {
@@ -17,12 +18,12 @@ export interface BookDetails {
   rating: number;
 }
 
-export interface AuthorDto {
-  id: string;
+export interface Author {
+  id: number;
   name: string;
 }
 
-export interface GenreDto {
+export interface Genre {
   id: number;
   name: string;
 }

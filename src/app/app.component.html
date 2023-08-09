@@ -1,47 +1,132 @@
+<!--Above line start-->
 
-<header class="p-3 mb-3 border-bottom">
+<div class="above-line">
   <div class="container">
-    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
-        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+    <div class="row d-flex justify-content-between align-items-center py-1">
+      <div class="col-6 ">
+        Supporting your high street
+        <a href="#" class="col above-link">Find out how »</a>
+      </div>
+
+      <ul class="col-6  list-inline d-flex flex-wrap above-list align-items-center m-0">
+        <li class=""><a href="#" class="text-decoration-none "> Student Discount </a></li>
+        <li class=""><a href="#" class="text-decoration-none "> Senior Discount </a></li>
+        <li class=""><a href="#" class="text-decoration-none "> Reviews </a></li>
+        <li class=""><a href="#" class="text-decoration-none "> Help </a></li>
+        <li class=""><a href="#" class="text-decoration-none"> Contact </a></li>
+      </ul >
+
+    </div>
+  </div>
+</div>
+
+<!--Above line end-->
+
+
+<!--Header start-->
+
+<header class="header py-5">
+  <div class="container">
+    <div class="align-items-center d-flex flex-wrap text-decoration-none justify-content-between">
+
+      <a [routerLink]="['/book/list', '']" class="d-flex align-items-center col-auto p-0 py-3">
+        <h2>Book Heaven</h2>
       </a>
 
-      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><a [routerLink] = "['']" class="nav-link px-2 link-secondary">Book Heaven</a></li>
-        <li><a [routerLink] = "['/book/1']" class="nav-link px-2 link-body-emphasis">Books</a></li>
-        <li><a [routerLink] = "['/book/update/1']" class="nav-link px-2 link-body-emphasis">Authors</a></li>
-        <li><a [routerLink] = "['/book/create']" class="nav-link px-2 link-body-emphasis">Genres</a></li>
-      </ul>
-
-      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-        <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+      <form (ngSubmit)="search()" action="" class="col-auto d-flex flex-grow-1 pr-5 pl-5 ">
+        <input type="search" class="form-control col-10 shadow" [formControl]="word" placeholder="Search..."/>
+        <button type="submit" class=" d-flex justify-content-center shadow align-items-center col-2 rounded search-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+          </svg>
+        </button>
       </form>
 
-      <div class=" text-end" *ngIf="!isSigned">
-        <button [routerLink]="['login']" type="button" class="btn btn-outline-primary me-2">Login</button>
-        <button type="button" [routerLink]="['register']" class="btn btn-primary">Sign-up</button>
+      <div class=" col-auto pr-0 align-items-center text-center">
+        <div *ngIf="!isSigned" class="">Click here to login</div>
+        <div *ngIf="isSigned" class="">Click here to sign off</div>
+        <a *ngIf="!isSigned" routerLink="login" class="text-decoration-none account-link"><h5>My Account</h5></a>
+        <a *ngIf="isSigned" (click)="signOut()" class="text-decoration-none account-link"><h5>{{username}}</h5></a>
       </div>
-      <div class=" " *ngIf="isSigned">
-        <a class="nav-link">Welcome, {{username}}</a>
-        <button class="btn btn-primary" (click)="signOut()">SignOut</button>
-      </div>
+
     </div>
   </div>
 </header>
 
+<!--Header end-->
 
-  <router-outlet></router-outlet>
+
+<!--Nav start-->
+
+<nav class="nav border my-3">
+  <div class="container ">
+    <ul class="list-inline d-flex flex-wrap py-2 m-0">
+      <li class="mr-4"><a href="#" class="text-decoration-none"> Home </a></li>
+      <li class="mr-4"><a href="#" class="text-decoration-none"> Save list </a></li>
+    </ul >
+  </div>
+</nav>
+
+<!--Nav ends-->
 
 
-<div class="container">
-  <footer class="py-5 my-5">
-    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
-    </ul>
-    <p class="text-center text-body-secondary">© 2023 Company, Inc</p>
-  </footer>
-</div>
+<router-outlet></router-outlet>
+
+
+<!--Footer start-->
+
+<footer class="footer mt-3 ">
+  <div class="container">
+    <div class="d-flex">
+      <div class="contacts col-7 d-flex justify-content-between pb-2 pt-4 pl-0 pr-5">
+        <ul class="text-decoration-none list-style-none">
+          <li><a href=""><b>Our company</b></a></li>
+          <li><a href="">What's Book Heaven all About?</a></li>
+          <li><a href="">Join to Book Heaven Network</a></li>
+          <li><a href="">Join our Afflicate Programme</a></li>
+          <li><a href="">Testimonials</a></li>
+          <li><a href="">Student Discount</a></li>
+          <li><a href="">Senior Discount</a></li>
+        </ul>
+        <ul class="text-decoration-none">
+          <li><a href=""><b>Htlpful Links</b></a></li>
+          <li><a href="">Sign In / Register</a></li>
+          <li><a href="">My Account</a></li>
+          <li><a href="">Contact Us</a></li>
+          <li><a href="">Delivery</a></li>
+          <li><a href="">Returns</a></li>
+          <li><a href="">eBook Help</a></li>
+          <li><a href="">FAQs</a></li>
+          <li><a href="">Log Off</a></li>
+        </ul>
+        <ul class="text-decoration-none">
+          <li><a href=""><b>Connect</b></a></li>
+          <li><a href="">Facebook</a></li>
+          <li><a href="">Twitter</a></li>
+          <li><a href="">Pinterest</a></li>
+          <li><a href="">YouTube</a></li>
+        </ul>
+      </div>
+      <div class="finder col-5 py-4">
+        <div class="d-flex">
+          <div class="col-9">
+            <b>Bookshop Finder</b>
+            <p class="finder-text">Discover bookshops local to you. Enter your postcode and search for your nearest. Book Heaven network shop.</p>
+          </div>
+          <div class="col-3">
+            <img class="finder-image" src="../assets/images/eu.png" alt="" >
+          </div>
+        </div>
+        <form action="" class="row d-flex flex-grow-1 mt-5 justify-content-center mx-0">
+          <input type="search" class="form-control col-10 shadow w-auto" placeholder="Search..."/>
+          <button type="submit" class="d-flex justify-content-center shadow align-items-center col-2 rounded finder-button font-weight-bold text-white">
+            Find
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<!--Footer end-->

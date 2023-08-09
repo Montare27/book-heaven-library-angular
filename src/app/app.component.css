@@ -1,0 +1,236 @@
+/*Main*/
+
+div {
+  display: block;
+}
+
+a, li, p, span, button, h1, h2, h3, h4, h5 {
+  color: #212529;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.container {
+  width: 980px;
+}
+
+/*Shared*/
+
+.above-line, .search-button, .account-link::after, .filter-item, .filter-item:hover, .button-send-review {
+  background-color: #FFD04D;
+}
+
+.search-button, .button-send-review {
+  border-color:  #FFD04D;
+}
+
+.search-button,  .save-icon, .button-send-review, .download-button {
+  color: white;
+}
+
+.view-details-button, .download-button, .sign-in-button, .sign-in-button:hover {
+  background:  #2794AD;
+  border-color: #2794AD;
+}
+
+
+/*Above line*/
+
+.above-list li {
+  margin-right: 7px;
+}
+
+.above-list li::after {
+  padding-left: 7px;
+  content: "|";
+}
+
+.above-list li:last-child::after {
+  content: "";
+}
+
+/*Header*/
+
+.search-button {
+  box-shadow: none;
+}
+
+.account-link::after {
+  display: block;
+  content: "";
+  height: 2px;
+}
+
+
+/*Footer*/
+
+.footer {
+  background-color: #F3F3F3;
+}
+
+
+.footer .container .row .contacts ul li:first-child a {
+  font-size: 1rem;
+}
+
+.footer .container .row .contacts ul li a, .finder-text{
+  font-size: 0.75rem;
+}
+
+.finder {
+  background-color: #EBEBEB;
+}
+
+.finder-image {
+  height: 80px;
+}
+
+.finder-button {
+  background-color: #50A4BB;
+  border-color: #50A4BB;
+}
+
+
+/*Home page*/
+
+
+.filter-item option {
+  background-color: white;
+}
+
+
+.catalogue-line {
+  height: 1px;
+  background-color: #F3F3F3;
+}
+
+.catalogue-item {
+  flex: 1 0 25%;
+  margin-bottom: 50px;
+}
+
+.catalogue-item:hover .save-icon{
+  visibility:visible;
+}
+
+.card-img-top {
+  max-height: 295px;
+}
+
+.save-icon {
+  position: absolute;
+  top: 10px;
+  left: 24px;
+
+  background-color: white;
+
+  font-size: 0.75rem;
+  border-radius: 100%;
+  visibility: hidden;
+
+  padding: 5px 8px;
+}
+
+/*Book page*/
+
+.route-list li:after {
+  content: "/";
+  margin-right: 10px;
+  margin-left: 6px;
+}
+
+.route-list li:last-child::after {
+  content: "";
+}
+
+.book-type {
+  color: #CAC9CA;
+  font-size: 0.75rem;
+}
+
+.stock-status {
+  background-color: #EBEBEB;
+
+}
+
+.stock-status:first-child::before{
+  content: "\2713";
+  margin-right: 3px;
+  color: #28a745;
+}
+
+.social-networks {
+  color: #EBEBEB;
+}
+
+.social-networks svg {
+  margin-right: 10px;
+}
+
+.book-segment-title::after {
+  content: "";
+  position: relative;
+  display: block;
+  bottom: 11px;
+  left: 8rem;
+  width: 70%;
+  border-bottom: 1px solid #cbe8f0;
+}
+
+/*Reviews*/
+
+.review-text {
+  font-size: 0.75rem;
+}
+
+.review-text::before, .review-text::after {
+  content: url("data:image/svg+xml;charset=UTF-8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-quote\" viewBox=\"0 0 16 16\"><path d=\"M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z\"/></svg>");
+}
+
+.review-text::before {
+  margin-right: 5px;
+}
+
+.review-text::after {
+  margin-left: 5px;
+  display: inline-block;
+  transform: rotate(180deg);
+}
+
+textarea.form-control {
+  height: 100px;
+}
+
+/*Download Menu*/
+
+.download-menu {
+  background: rgba(80, 164, 187, 0.1);
+  height: 350px;
+}
+
+.save-button {
+  background: linear-gradient(white, #CAC9CA);
+}
+
+.delivery-icon::before, .delivery-icon::after {
+  content: "";
+  display: block;
+  position: relative;
+  width: 40%;
+}
+
+.delivery-icon::before {
+  top: 0.8rem;
+  left: 0;
+  border-bottom: 1px solid #CAC9CA;
+}
+
+.delivery-icon::after {
+  bottom: 0.85rem;
+  right: -8rem;
+  border-top: 1px solid #CAC9CA;
+}

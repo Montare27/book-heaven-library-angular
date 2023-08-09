@@ -30,11 +30,12 @@ export class LoginComponent {
     };
   }
 
-  onSubmit() {
+  login() {
     let user = this.parseData();
     this.userService.login(user).subscribe((response) => {
       this.currentUserService.setName(response.username);
       this.currentUserService.setRoles(response.roles);
+      localStorage.setItem("token", response.token);
     });
 
     this.redirectService.redirectToIndex();
